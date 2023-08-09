@@ -43,7 +43,7 @@ const setvalues = () => {
         weight = weight * 0.45359237;
     }
 }
-const bmiCalc = () => {
+const bmiCalc = () => { // takes care of the BMI calculation
     let bmi = 0;
     bmi = weight / (height * height);
     bmifinal.innerText = bmi;
