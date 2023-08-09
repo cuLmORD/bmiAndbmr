@@ -57,7 +57,7 @@ const bmiCalc = () => {
         bmifeedback.innerText = `Bruh tf, why the hell are you so friggin   F   A   T   wtf? Go hit the gym bruh. you really to lose alot of weight or you're gonna explode like a baloon! You can do it, keep working to lose weight!`
     }
 }
-const bmrCalc = () => {
+const bmrCalc = () => { // calculates the BMR
     let bmr = 0;
     if (male) {
         bmr = 66 + (13.7 * weight) + (5 * (height * 100)) - (6.8 * age);
