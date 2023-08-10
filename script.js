@@ -20,19 +20,35 @@ const setMetric = () => {
     weightinp.setAttribute("placeholder", "kg");
     heightinp.setAttribute("placeholder", "meters");
     system = 1;
+    met.style.backgroundColor = "#8bff61";
+    met.style.color = "#000000";
+    imp.style.backgroundColor = "#363535";
+    imp.style.color = "#ffffff";
 }
 const setImp = () => {
     weightinp.setAttribute("placeholder", "lb");
     heightinp.setAttribute("placeholder", "feet");
     system = 2;
+    imp.style.backgroundColor = "#8bff61";
+    imp.style.color = "#000000";
+    met.style.backgroundColor = "#363535";
+    met.style.color = "#ffffff";
 }
 const setmale = () => {
     male = true;
     female = false;
+    maleButton.style.backgroundColor = "#8bff61";
+    maleButton.style.color = "#000000";
+    femaleButton.style.backgroundColor = "#5a5a5a";
+    femaleButton.style.color = "#ffffff";
 }
 const setfemale = () => {
     male = false;
     female = true;
+    femaleButton.style.backgroundColor = "#8bff61";
+    femaleButton.style.color = "#000000";
+    maleButton.style.backgroundColor = "#5a5a5a";
+    maleButton.style.color = "#ffffff";
 }
 const setvalues = () => {
     age = ageinp.value;
@@ -54,7 +70,7 @@ const bmiCalc = () => { // takes care of the BMI calculation
     } if (bmi > 24.9 && bmi <= 29.9) {
         bmifeedback.innerText = `Hmmmmm seems like you're getting a bit chubby there, you should consider losing some weight and maintain your eating habits :3 go get that perfect bmi, you can do it!`
     } if (bmi > 29.9) {
-        bmifeedback.innerText = `Bruh tf, why the hell are you so friggin   F   A   T   wtf? Go hit the gym bruh. you really to lose alot of weight or you're gonna explode like a baloon! You can do it, keep working to lose weight!`
+        bmifeedback.innerText = `Bruh tf, why the hell are you so friggin   F   A   T   wtf? Go hit the gym bruh. you really need to lose alot of weight or you're gonna explode like a baloon! You can do it, keep working to lose weight!`
     }
 }
 const bmrCalc = () => { // calculates the BMR
