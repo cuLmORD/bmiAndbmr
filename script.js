@@ -13,6 +13,8 @@ const bmrfeedback = document.getElementById("bmrfeedback");
 let male = false;
 let female = false;
 let age = 0;
+let bmi = 0;
+let bmr = 0;
 let height = 0;
 let weight = 0;
 let system = 0; //system 1 = metric, system 2 = imp 
@@ -59,22 +61,23 @@ const setvalues = () => {
         weight = weight * 0.45359237;
     }
 }
-const bmiCalc = () => { // takes care of the BMI calculation
-    let bmi = 0;
-    bmi = weight / (height * height);
-    bmifinal.innerText = bmi;
-    if (bmi < 18.5) {
-        bmifeedback.innerText = `You're skinny as hell bruh, go eat something. You need to gain weight wtf -,- go eat more than ${bmr} calories smh, it'll help you gain some weight lmao`;
-    } if (bmi >= 18.5 && bmi <= 24.9) {
+const setBmiText = () => {
+    if (bmi >= 18.5 && bmi <= 24.9) {
         bmifeedback.innerText = `Woah you're really healthy! You have a bmi of ${bmi} and thats really good! keep it up!`
     } if (bmi > 24.9 && bmi <= 29.9) {
         bmifeedback.innerText = `Hmmmmm seems like you're getting a bit chubby there, you should consider losing some weight and maintain your eating habits :3 go get that perfect bmi, you can do it!`
     } if (bmi > 29.9) {
         bmifeedback.innerText = `Bruh tf, why the hell are you so friggin   F   A   T   wtf? Go hit the gym bruh. you really need to lose alot of weight or you're gonna explode like a baloon! You can do it, keep working to lose weight!`
+    } if (bmi < 18.5) {
+        bmifeedback.innerText = `You're skinny as hell bruh, go eat something. You need to gain weight wtf -,- go eat more than ${bmr} calories smh, it'll help you gain some more weight lmao`
     }
 }
+const bmiCalc = () => { // takes care of the BMI calculation
+    bmi = weight / (height * height);
+    bmifinal.innerText = bmi;
+    
+}
 const bmrCalc = () => { // calculates the BMR
-    let bmr = 0;
     if (male) {
         bmr = 66 + (13.7 * weight) + (5 * (height * 100)) - (6.8 * age);
         bmrfinal.innerText = bmr + " calories";
@@ -89,5 +92,6 @@ const calculate = () => { // :3 takes care of the calculation all at once :D
     setvalues();
     bmiCalc();
     bmrCalc();
+    setBmiText();
 }
 calc.onclick = calculate;
